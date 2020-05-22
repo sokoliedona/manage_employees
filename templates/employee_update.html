@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class = 'container'>
+
+  <h3> Update Employee's Informations </h3>
+
+
+ <div class="row">
+      <form method = 'POST'>
+
+        <div class="input-field col s2">
+          <input name="name" id="name" type="text" value="{{EMPLOYEE.name}}"/>
+          <label for="name">Employee Name</label>
+        </div>
+
+        <div class="input-field col s2">
+          <input name="surname" id="surname" type="text" value="{{EMPLOYEE.surname}}"/>
+          <label for="surname">Employee Surname</label>
+        </div>
+
+        <div class="input-field col s3">
+          <input name="email" id="email" type="text" value="{{EMPLOYEE.email}}"/>
+          <label for="email">Email</label>
+        </div>
+
+        <div class="input-field col s2">
+          <input name="phone" id="phone" type="text" value="{{EMPLOYEE.phone}}"/>
+          <label for="phone">Phone</label>
+        </div>
+
+        <div class="input-field col s3">
+          <input name="id_card" id="id_card" type="text" value="{{EMPLOYEE.id_card}}"/>
+          <label for="id_card">ID Card</label>
+        </div>
+
+
+        <div class = 'col s4'>
+            <button class = "btn waves-effect waves-light" type="submit">Save
+            <i class = "material-icons right ">save</i>
+            </button>
+        </div>
+
+
+      </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

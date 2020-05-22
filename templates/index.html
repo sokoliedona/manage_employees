@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class = container>
+
+    <h3> Informations of Employees </h3>
+
+
+  <div class="row">
+      <form method='GET'>
+        <div class="input-field col s6">
+          <input name="SearchText"  id="SearchText" type="text">
+          <label for="SearchText">Search Employee</label>
+        </div>
+
+        <div class = 'col s6'>
+            <button class = "waves-effect waves-light red btn" type="submit">Search
+            <i class = "material-icons right ">search</i>
+            </button>
+        </div>
+
+      </form>
+
+  </div>
+
+  <div class = "row">
+
+  </div>
+
+  <div class ="row">
+
+      <table class = "striped">
+          <tr>
+              <th class = "card-panel blue-grey lighten-1">
+                  ID
+              </th>
+
+              <th class = "card-panel blue-grey lighten-1">
+                  Name <i class="material-icons prefix">account_circle</i>
+              </th>
+
+              <th class = "card-panel blue-grey lighten-1">
+                  Surname <i class="material-icons prefix">account_circle</i>
+              </th>
+
+              <th class = "card-panel blue-grey lighten-1">
+                  Email <i class = "material-icons right ">mail</i>
+              </th>
+
+              <th class = "card-panel blue-grey lighten-1">
+                  Phone <i class = "material-icons right ">phone</i>
+              </th>
+
+              <th class = "card-panel blue-grey lighten-1">
+                  ID Card <i class="material-icons prefix">person</i>
+              </th>
+
+
+              {% for e in EMPLOYEE %}
+
+           <tbody>
+              <tr>
+                  <th>
+                      {{ e.id }}
+                  </th>
+
+                  <td>
+                      {{ e.name }}
+                  </td>
+
+                  <td>
+                      {{ e.surname }}
+                  </td>
+
+                  <td>
+                      {{ e.email}}
+                  </td>
+
+                  <td>
+                      +{{e.phone}}
+                  </td>
+
+                  <td>
+                      {{e.id_card}}
+                  </td>
+
+
+                  <th>
+                      <a href="{{url_for('.delete',id=e.id)}}"> delete </a>
+                  </th>
+
+                  <th>
+                      <a href="{{url_for('.update',id=e.id)}}"> update </a>
+                  </th>
+
+                </tr>
+
+            </tbody>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+<div class = "row">
+
+  </div>
+
+<div class="row">
+
+    <div class="row">
+       <h5> Add new employee </h5>
+    </div>
+
+      <form  method = "POST" >
+
+        <div class="input-field col s2">
+          <input name="name" placeholder="Placeholder" id="name" type="text">
+          <label for="name">Name</label>
+        </div>
+
+        <div class="input-field col s2">
+          <input name="surname" placeholder="Placeholder" id="surname" type="text">
+          <label for="surname">Surname</label>
+        </div>
+
+        <div class="input-field col s2">
+          <input name="email" placeholder="Placeholder" id="email" type="email">
+          <label for="email">Email</label>
+        </div>
+
+        <div class="input-field col s2">
+          <input name="phone" placeholder="Placeholder" id="phone" type="tel">
+          <label for="phone">Phone</label>
+        </div>
+
+        <div class="input-field col s2">
+          <input name="id_card" placeholder="Placeholder" id="id_card" type="text">
+          <label for="id_card">ID Card</label>
+        </div>
+
+
+        <div class = "row">
+
+        </div>
+
+        <div class = 'col s4'>
+            <button class = "waves-effect waves-light red btn" type="submit">Create Employee and Upload CV
+            <i class = "material-icons right ">send</i>
+            </button>
+        </div>
+
+      </form>
+</div>
+
+<div class="row">
+
+</div>
+
+<div class="row">
+
+</div>
+
+<div class="row">
+
+</div>
+
+<div class="row">
+      <form method='GET'>
+
+        <div class = 'col s6'>
+                <a href="{{url_for('logout')}}">LOG OUT<i class = "material-icons right ">exit_to_app</i></a>
+        </div>
+
+      </form>
+
+  </div>
+
+
+<div class " row divider"></div>
+
+
+{% endblock %}

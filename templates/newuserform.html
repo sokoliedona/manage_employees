@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Create/Edit User</h2>
+    <form action="{{ url_for('new_user_form') }}" class="col s12" method="POST">
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="username" name="username" type="text" class="validate">
+                <label for="username">Username</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="password" name='password' type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" name="action" type="submit">Create
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>
+{% endblock %}
