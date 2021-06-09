@@ -2,6 +2,7 @@
 # He can perform CRUD operations for his Employees' Information
 # Like: create(add) new Employee with his name,surname,email, phone number and ID card and store their CV in the static folder inside the project
 # The manager can update and delete their informations and search for any employee in the database
+# http://edonaaaaa1096.pythonanywhere.com/
 
 from flask import Flask, redirect, url_for, render_template, request
 from flask_login import LoginManager, UserMixin,  current_user, login_user, login_required, logout_user
